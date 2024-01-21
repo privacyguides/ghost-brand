@@ -12,7 +12,7 @@
             </h2>
 
             <div class="gh-topic-content">
-                {{#foreach posts limit="7"}}
+                {{#foreach posts limit="3"}}
                     {{> "loop-grid"}}
                 {{/foreach}}
             </div>
@@ -23,22 +23,6 @@
                 {{/match}}
             </footer>
         </section>
-
-        {{#if @custom.enter_tag_slugs_for_primary_sections}}
-            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
-                {{#foreach tags}}
-                    {{> "topic-grid"}}
-                {{/foreach}}
-            {{/get}}
-        {{else}}
-            {{#match posts.length ">" 1}}
-                {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
-                    {{#foreach tags}}
-                        {{> "topic-grid"}}
-                    {{/foreach}}
-                {{/get}}
-            {{/match}}
-        {{/if}}
 
         {{#if @custom.enter_tag_slugs_for_secondary_sections}}
             {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
@@ -63,5 +47,22 @@
                 {{/get}}
             {{/match}}
         {{/if}}
+
+        {{#if @custom.enter_tag_slugs_for_primary_sections}}
+            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
+                {{#foreach tags}}
+                    {{> "topic-grid"}}
+                {{/foreach}}
+            {{/get}}
+        {{else}}
+            {{#match posts.length ">" 1}}
+                {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
+                    {{#foreach tags}}
+                        {{> "topic-grid"}}
+                    {{/foreach}}
+                {{/get}}
+            {{/match}}
+        {{/if}}
+
     </div>
 </main>
