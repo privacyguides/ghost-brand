@@ -1,5 +1,5 @@
 {
-    "name": "headline",
+    "name": "privacyguides-headline",
     "description": "A Ghost theme",
     "version": "1.0.0",
     "private": true,
@@ -8,16 +8,16 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Jonah Aragon",
+        "email": "jonah@triplebit.net",
+        "url": "https://www.jonaharagon.com"
     },
     "keywords": [
         "ghost",
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://headline.ghost.io/about/",
+    "docs": "https://blog.privacyguides.org/",
     "config": {
         "posts_per_page": 7,
         "image_sizes": {
