@@ -230,9 +230,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 .gh-card-footer {
-    display: flex;
-    gap: 6px;
-    align-items: center;
     margin-top: 16px;
     font-size: 1.1rem;
     font-weight: 500;
@@ -249,19 +246,20 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     color: var(--color-white);
 }
 
-.gh-card-footer > * + * {
-    display: flex;
-    gap: 6px;
-    align-items: center;
+.gh-card-footer > * {
+    display: inline-block;
 }
 
 .gh-card-footer > * + *:not(script)::before {
-    display: block;
+    display: inline-flex;
     width: 2px;
     height: 2px;
+    margin-right: 6px;
+    margin-left: 4px;
     content: "";
     background-color: currentColor;
     border-radius: 50%;
+    transform: translateY(-3px);
 }
 
 /* Styles specific to list style sections */
@@ -438,6 +436,31 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     letter-spacing: -0.01em;
 }
 
+.gh-author-location {
+    margin-top: 4px;
+    color: var(--color-darker-gray);
+}
+
+.gh-author-social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.gh-author-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.gh-author-social svg {
+    width: 18px;
+    height: 18px;
+}
+
 .gh-article-meta {
     margin-top: 3px;
     font-size: 1.3rem;
@@ -569,8 +592,8 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     color: var(--color-white);
 }
 
-.has-serif-body .gh-cover-description {
-    font-family: var(--font-serif);
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-cover-description {
+    font-family: var(--gh-font-body, var(--font-serif));
 }
 
 /* Page head */
@@ -594,8 +617,8 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     color: var(--color-secondary-text);
 }
 
-.has-serif-body .gh-pagehead-description {
-    font-family: var(--font-serif);
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-pagehead-description {
+    font-family: var(--gh-font-body, var(--font-serif));
 }
 
 /* Subscription banner */
@@ -612,8 +635,8 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     white-space: break-spaces;
 }
 
-.has-serif-title .gh-subscribe-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .gh-subscribe-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .gh-subscribe-description {
@@ -622,8 +645,8 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     white-space: break-spaces;
 }
 
-.has-serif-body .gh-subscribe-description {
-    font-family: var(--font-serif);
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-subscribe-description {
+    font-family: var(--gh-font-body, var(--font-serif));
 }
 
 .gh-subscribe-btn {
